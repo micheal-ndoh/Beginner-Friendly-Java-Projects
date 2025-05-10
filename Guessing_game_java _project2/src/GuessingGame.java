@@ -36,13 +36,14 @@ public class GuessingGame {
 
             }
 
-            int range = 0;
+            int range;
             int tries = 3;
 
             switch (mode) {
                 case 0:
                     System.out.println("😃 EASY MODE 😃");
                     range = 10;
+                    tries++;
                     break;
                 case 1:
                     System.out.println("☺️ NORMAL MODE ☺️");
