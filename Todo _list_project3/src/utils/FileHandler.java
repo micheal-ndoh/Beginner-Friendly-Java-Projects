@@ -1,0 +1,53 @@
+package utils;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import services.Task;
+
+public class FileHandler {
+
+    private static final String FILE_NAME = "tasks.txt";
+
+    public static void saveTasks(List<Task> tasks) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
+            for (Task task : tasks) {
+                writer.write(task.getId() + "," + task.getDescription() + "," + task.isCompleted());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.err.println("Error saving tasks: " + e.getMessage());
+        }
+    }
+
+    public static List<Task> loadTasks() {
+        List<Task> tasks = new ArrayList<>();
+        if (!Files.exists(Paths.get(FILE_NAME))) return tasks;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",", 3);
+                if (parts.length == 3) {
+                    int id = Integer.parseInt(parts[0]);
+                    String description = parts[1];
+                    boolean completed = Boolean.parseBoolean(parts[2]);
+                    tasks.add(new Task(id, description, completed));
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error loading tasks: " + e.getMessage());
+        }
+        return tasks;
+    }
+
+    public static void deleteTasks() {
+        try {
+            Files.deleteIfExists(Paths.get(FILE_NAME));
+        } catch (IOException e) {
+            System.err.println("Error deleting tasks file: " + e.getMessage());
+        }
+    }
+}
