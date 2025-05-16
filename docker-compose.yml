@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  project1:
+    build:
+      context: ./Calculator-project1
+      dockerfile: Dockerfile
+    container_name: project1_container
+    ports:
+      - "8081:8080" 
+    stdin_open: true
+    tty: true
+
+  temperature_converter_project_9:
+    build:
+      context: ./Temperature_converter_project_9
+      dockerfile: Dockerfile
+    container_name: temperature_converter_container
+    ports:
+      - "8083:8080" 
+    stdin_open: true
+    tty: true
+
+  Library-Management-System:
+    build:
+      context: ./Library-Management-System
+      dockerfile: Dockerfile
+    container_name: Library-Management-System_container
+    ports:
+      - "8084:8080" 
+    stdin_open: true
+    tty: true
+
+  Todo _list_project3:
+    build:
+      context: ./Todo _list_project3
+      dockerfile: Dockerfile
+    container_name: Todo_list_container
+    ports:
+      - "8085:8080" 
+    stdin_open: true
+    tty: true
+
+  Rock_game:
+    build:
+      context: ./Rock_game
+      dockerfile: Dockerfile
+    container_name: Rock_game_container
+    ports:
+      - "8086:8080" 
+    stdin_open: true
+    tty: true
+
+  Student Grade Tracker:
+    build:
+      context: ./Student Grade Tracker
+      dockerfile: Dockerfile
+    container_name: Student_Grade_Tracker_container
+    ports:
+      - "8087:8080" 
+    stdin_open: true
+    tty: true
+
+  Simple-Chatbot-project-10:
+    build:
+      context: ./Simple-Chatbot-project-10
+      dockerfile: Dockerfile
+    container_name: Simple_Chatbot_container
+    ports:
+      - "8088:8080" 
+    stdin_open: true
+    tty: true
+
+  Guessing_game_java _project2:
+    build:
+      context: ./Guessing_game_java _project2
+      dockerfile: Dockerfile
+    container_name: Guessing_game_container
+    ports:
+      - "8090:8080" 
+    stdin_open: true
+    tty: true
+
