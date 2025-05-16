@@ -11,6 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      packages: write
+      workflows: write
+      pull-requests: write
+      push: write
+
+    name: Trigger Folder Workflows
 
     steps:
       - name: Trigger Calculator-project1 workflow
