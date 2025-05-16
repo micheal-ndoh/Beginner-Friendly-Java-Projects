@@ -9,6 +9,9 @@ on:
 jobs:
   trigger-folder-workflows:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      workflows: write 
 
     steps:
       - name: Trigger Calculator-project1 workflow
