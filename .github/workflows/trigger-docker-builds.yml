@@ -1,0 +1,124 @@
+name: Trigger Docker Builds in folders
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  trigger-folder-workflows:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Calculator-project1 workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'docker.yml',
+              ref: 'main',
+              inputs: {
+                folder: 'Calculator-project1'
+              }
+            });
+
+      - name: Trigger Temperature_converter_project_9 workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'docker.yml',
+              ref: 'main',
+              inputs: {
+                folder: 'Temperature_converter_project_9'
+              }
+            });
+
+      - name: Trigger Library-Management-System workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'docker.yml',
+              ref: 'main',
+              inputs: {
+                folder: 'Library-Management-System'
+              }
+            });
+
+      - name: Trigger Todo _list_project3 workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'docker.yml',
+              ref: 'main',
+              inputs: {
+                folder: 'Todo _list_project3'
+              }
+            });
+
+      - name: Trigger Rock_game workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'docker.yml',
+              ref: 'main',
+              inputs: {
+                folder: 'Rock_game'
+              }
+            });
+
+      - name: Trigger Student Grade Tracker workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'docker.yml',
+              ref: 'main',
+              inputs: {
+                folder: 'Student Grade Tracker'
+              }
+            });
+
+      - name: Trigger Simple-Chatbot-project-10 workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'docker.yml',
+              ref: 'main',
+              inputs: {
+                folder: 'Simple-Chatbot-project-10'
+              }
+            });
+
+      - name: Trigger Guessing_game_java _project2 workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'docker.yml',
+              ref: 'main',
+              inputs: {
+                folder: 'Guessing_game_java _project2'
+              }
+            });
