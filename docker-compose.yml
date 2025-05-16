@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: project1_container
     ports:
-      - "8081:8080" 
+      - "8081:8080"
     stdin_open: true
     tty: true
 
@@ -17,67 +17,66 @@ services:
       dockerfile: Dockerfile
     container_name: temperature_converter_container
     ports:
-      - "8083:8080" 
+      - "8083:8080"
     stdin_open: true
     tty: true
 
-  Library-Management-System:
+  library_management_system:
     build:
       context: ./Library-Management-System
       dockerfile: Dockerfile
-    container_name: Library-Management-System_container
+    container_name: library_management_system_container
     ports:
-      - "8084:8080" 
+      - "8084:8080"
     stdin_open: true
     tty: true
 
-  Todo _list_project3:
+  todo_list_project3:
     build:
       context: ./Todo _list_project3
       dockerfile: Dockerfile
-    container_name: Todo_list_container
+    container_name: todo_list_project3_container
     ports:
-      - "8085:8080" 
+      - "8085:8080"
     stdin_open: true
     tty: true
 
-  Rock_game:
+  rock_game:
     build:
       context: ./Rock_game
       dockerfile: Dockerfile
-    container_name: Rock_game_container
+    container_name: rock_game_container
     ports:
-      - "8086:8080" 
+      - "8086:8080"
     stdin_open: true
     tty: true
 
-  Student Grade Tracker:
+  student_grade_tracker:
     build:
       context: ./Student Grade Tracker
       dockerfile: Dockerfile
-    container_name: Student_Grade_Tracker_container
+    container_name: student_grade_tracker_container
     ports:
-      - "8087:8080" 
+      - "8087:8080"
     stdin_open: true
     tty: true
 
-  Simple-Chatbot-project-10:
+  simple_chatbot_project_10:
     build:
       context: ./Simple-Chatbot-project-10
       dockerfile: Dockerfile
-    container_name: Simple_Chatbot_container
+    container_name: simple_chatbot_project_10_container
     ports:
-      - "8088:8080" 
+      - "8088:8080"
     stdin_open: true
     tty: true
 
-  Guessing_game_java _project2:
+  guessing_game_java_project2:
     build:
       context: ./Guessing_game_java _project2
       dockerfile: Dockerfile
-    container_name: Guessing_game_container
+    container_name: guessing_game_java_project2_container
     ports:
-      - "8090:8080" 
+      - "8090:8080"
     stdin_open: true
     tty: true
-
