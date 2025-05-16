@@ -1,4 +1,4 @@
-name: Trigger Docker Builds in folders
+name: Trigger Docker Builds
 
 on:
   push:
@@ -15,110 +15,86 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            await github.actions.createWorkflowDispatch({
+            await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: 'docker.yml',
-              ref: 'main',
-              inputs: {
-                folder: 'Calculator-project1'
-              }
+              workflow_id: 'Calculator-project1/.github/workflows/docker.yml',
+              ref: 'main'
             });
 
       - name: Trigger Temperature_converter_project_9 workflow
         uses: actions/github-script@v6
         with:
           script: |
-            await github.actions.createWorkflowDispatch({
+            await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: 'docker.yml',
-              ref: 'main',
-              inputs: {
-                folder: 'Temperature_converter_project_9'
-              }
+              workflow_id: 'Temperature_converter_project_9/.github/workflows/docker.yml',
+              ref: 'main'
             });
 
       - name: Trigger Library-Management-System workflow
         uses: actions/github-script@v6
         with:
           script: |
-            await github.actions.createWorkflowDispatch({
+            await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: 'docker.yml',
-              ref: 'main',
-              inputs: {
-                folder: 'Library-Management-System'
-              }
+              workflow_id: 'Library-Management-System/.github/workflows/docker.yml',
+              ref: 'main'
             });
 
       - name: Trigger Todo _list_project3 workflow
         uses: actions/github-script@v6
         with:
           script: |
-            await github.actions.createWorkflowDispatch({
+            await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: 'docker.yml',
-              ref: 'main',
-              inputs: {
-                folder: 'Todo _list_project3'
-              }
+              workflow_id: 'Todo _list_project3/.github/workflows/docker.yml',
+              ref: 'main'
             });
 
       - name: Trigger Rock_game workflow
         uses: actions/github-script@v6
         with:
           script: |
-            await github.actions.createWorkflowDispatch({
+            await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: 'docker.yml',
-              ref: 'main',
-              inputs: {
-                folder: 'Rock_game'
-              }
+              workflow_id: 'Rock_game/.github/workflows/docker.yml',
+              ref: 'main'
             });
 
       - name: Trigger Student Grade Tracker workflow
         uses: actions/github-script@v6
         with:
           script: |
-            await github.actions.createWorkflowDispatch({
+            await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: 'docker.yml',
-              ref: 'main',
-              inputs: {
-                folder: 'Student Grade Tracker'
-              }
+              workflow_id: 'Student Grade Tracker/.github/workflows/docker.yml',
+              ref: 'main'
             });
 
       - name: Trigger Simple-Chatbot-project-10 workflow
         uses: actions/github-script@v6
         with:
           script: |
-            await github.actions.createWorkflowDispatch({
+            await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: 'docker.yml',
-              ref: 'main',
-              inputs: {
-                folder: 'Simple-Chatbot-project-10'
-              }
+              workflow_id: 'Simple-Chatbot-project-10/.github/workflows/docker.yml',
+              ref: 'main'
             });
 
       - name: Trigger Guessing_game_java _project2 workflow
         uses: actions/github-script@v6
         with:
           script: |
-            await github.actions.createWorkflowDispatch({
+            await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: 'docker.yml',
-              ref: 'main',
-              inputs: {
-                folder: 'Guessing_game_java _project2'
-              }
+              workflow_id: 'Guessing_game_java _project2/.github/workflows/docker.yml',
+              ref: 'main'
             });
