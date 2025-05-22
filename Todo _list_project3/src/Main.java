@@ -12,9 +12,9 @@ public class Main {
         TaskService taskService = new TaskService();
         Scanner scanner = new Scanner(System.in);
         int choice = 0;
-        System.out.println(Style.BOLD + Color.PURPLE + "\n----------------------------------------" + Color.RESET + Style.RESET);
+        System.out.println(Style.BOLD + Color.PURPLE + "----------------------------------------" + Color.RESET + Style.RESET);
         System.out.println(Style.BOLD + Color.PURPLE + "| Welcome to the To-Do List Application |" + Color.RESET + Style.RESET);
-        System.out.println(Style.BOLD + Color.PURPLE + "----------------------------------------\n" + Color.RESET + Style.RESET);
+        System.out.println(Style.BOLD + Color.PURPLE + "----------------------------------------" + Color.RESET + Style.RESET);
         do {
             System.out.println(Style.BOLD + Color.PURPLE + "\nTo-Do List Menu:\n" + Color.RESET + Style.RESET);
             System.out.println(Color.YELLOW + "1. Add a Task");
