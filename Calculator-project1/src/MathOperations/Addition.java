@@ -1,8 +1,9 @@
 package MathOperations;
 
-public class Addition {
+import java.math.BigInteger;
 
-    public int add(int a, int b) {
-        return a + b;
+public class Addition {
+    public BigInteger add(BigInteger a, BigInteger b) {
+        return a.add(b);
     }
 }
