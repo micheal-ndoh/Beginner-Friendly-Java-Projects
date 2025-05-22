@@ -34,9 +34,9 @@ public class RockPaperScissor {
             } else if ((input.equals("rock") && player2Move.equals("scissors"))
                     || (input.equals("paper") && player2Move.equals("rock"))
                     || (input.equals("scissors") && player2Move.equals("paper"))) {
-                System.out.println("You win!");
+                System.out.println("You win");
             } else {
-                System.out.println("Player2 wins!");
+                System.out.println("Player2 wins");
             }
         }
 
