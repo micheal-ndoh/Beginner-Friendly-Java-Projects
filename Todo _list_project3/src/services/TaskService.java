@@ -20,6 +20,9 @@ public class TaskService {
 
     public void deleteTask(int id) {
         tasks.removeIf(task -> task.getId() == id);
+        for (int i = 0; i < tasks.size(); i++) {
+            tasks.get(i).setId(i + 1);
+        }
         FileHandler.saveTasks(tasks);
     }
 
