@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Main {
@@ -6,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to my temperature converter");
-        System.out.println("Please enter the temperature you want to convert (e.g., 100C, 212F, 300K):");
+        System.out.println("Please enter the temperature you want to convert (e.g 100C, 212F, 300K):");
         String input = scanner.nextLine();
 
         double temperature = Double.parseDouble(input.substring(0, input.length() - 1));

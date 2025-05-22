@@ -1,6 +1,8 @@
+
 import java.util.Scanner;
 
 public class Main {
+
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -16,16 +18,23 @@ public class Main {
             System.out.println("0. Exit");
             System.out.print("Choose option: ");
             choice = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine();
 
             switch (choice) {
-                case 1 -> Management.addStudent();
-                case 2 -> Management.showStudents();
-                case 3 -> Management.showStatistics();
-                case 4 -> Management.saveToFile();
-                case 5 -> Management.loadFromFile();
-                case 0 -> System.out.println("Exiting...");
-                default -> System.out.println("Invalid choice!");
+                case 1 ->
+                    Management.addStudent();
+                case 2 ->
+                    Management.showStudents();
+                case 3 ->
+                    Management.showStatistics();
+                case 4 ->
+                    Management.saveToFile();
+                case 5 ->
+                    Management.loadFromFile();
+                case 0 ->
+                    System.out.println("Exiting...");
+                default ->
+                    System.out.println("Invalid choice!");
             }
 
         } while (choice != 0);

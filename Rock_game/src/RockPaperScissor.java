@@ -1,13 +1,17 @@
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 
 public class RockPaperScissor {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
         String[] options = {"rock", "paper", "scissors"};
         System.out.println("Welcome to Rock-Paper-Scissors game");
-        
+
         while (true) {
             System.out.print("Enter your move (rock, paper, scissors or quit): ");
             String input = scanner.nextLine().toLowerCase();
@@ -27,11 +31,9 @@ public class RockPaperScissor {
 
             if (input.equals(player2Move)) {
                 System.out.println("Draw");
-            } else if (
-                (input.equals("rock") && player2Move.equals("scissors")) ||
-                (input.equals("paper") && player2Move.equals("rock")) ||
-                (input.equals("scissors") && player2Move.equals("paper"))
-            ) {
+            } else if ((input.equals("rock") && player2Move.equals("scissors"))
+                    || (input.equals("paper") && player2Move.equals("rock"))
+                    || (input.equals("scissors") && player2Move.equals("paper"))) {
                 System.out.println("You win!");
             } else {
                 System.out.println("Player2 wins!");

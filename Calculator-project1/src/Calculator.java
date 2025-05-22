@@ -1,7 +1,7 @@
 
 import MathOperations.Addition;
 import MathOperations.Divide;
-import MathOperations.Factorial;
+import MathOperations.Factorial;!
 import MathOperations.Multiply;
 import MathOperations.Substraction;
 import java.util.Scanner;
