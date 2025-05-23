@@ -1,13 +1,15 @@
 
+import java.io.ByteArrayInputStream;
+import java.util.Scanner;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.library.services.BookManager;
-
-import java.util.Scanner;
-import java.io.ByteArrayInputStream;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class BookManagerTest {
 
