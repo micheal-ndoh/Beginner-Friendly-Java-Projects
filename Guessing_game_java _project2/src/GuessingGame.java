@@ -37,29 +37,33 @@ public class GuessingGame {
             }
 
             int range;
-            int tries = 3;
+            int tries;
 
             switch (mode) {
                 case 0:
                     System.out.println("😃 EASY MODE 😃");
                     range = 10;
-                    tries++;
+                    tries = -1; 
                     break;
                 case 1:
                     System.out.println("☺️ NORMAL MODE ☺️");
                     range = 50;
+                    tries = 5;
                     break;
                 case 2:
                     System.out.println("🥲 HARD MODE 🥲");
                     range = 100;
+                    tries = 3;
                     break;
                 case 3:
                     System.out.println("🍀 SUPER HARD MODE 🍀");
                     range = 500;
+                    tries = 2;
                     break;
                 case 4:
                     System.out.println("😎 Win twice in a row and receive 5k Mode 😎");
                     range = 1000;
+                    tries = 1;
                     break;
                 case 5:
                     History.viewHistory();
@@ -68,7 +72,7 @@ public class GuessingGame {
                     History.deleteHistory();
                     continue;
                 default:
-                    System.out.println("Invalid mode. Please enter a number between 0 and 5.");
+                    System.out.println("Invalid mode. Please enter a number between 0 and 6.");
                     continue;
             }
 
@@ -76,16 +80,19 @@ public class GuessingGame {
             System.out.println("\nI'm thinking 🤔 of a number between 0 and " + range + ". Can you guess it?");
             System.out.println("-------------------------------------------------------------------------");
 
-            while (tries > 0) {
+            int attempts = 0;
+            boolean won = false;
+            while (tries == -1 || attempts < tries) {
                 System.out.print("\nEnter your guess: ");
                 int guess = scanner.nextInt();
+                attempts++;
 
                 if (guess == number) {
-
                     System.out.println("\n🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋");
                     System.out.println(ColorStyle.Style.bold + ColorStyle.Color.green + "🎋  You won ☺️🎉 you recieve a star ⭐ 🎋" + ColorStyle.Color.reset + ColorStyle.Style.reset);
                     System.out.println("🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋");
-                    History.saveHistory("You won in " + (3 - tries + 1) + " tries. The number was " + number + ".", true, number, 3 - tries + 1);
+                    History.saveHistory("You won in " + attempts + " tries. The number was " + number + ".", true, number, attempts);
+                    won = true;
                     break;
                 } else if (guess < number) {
                     System.out.println("\n🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
@@ -97,18 +104,16 @@ public class GuessingGame {
                     System.out.println("🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
                 }
 
-                tries--;
-                if (tries > 0) {
-                    System.out.println(ColorStyle.Style.bold + ColorStyle.Color.blue + "You have " + tries + " 😢 tries left. Please try again!" + ColorStyle.Color.reset + ColorStyle.Style.reset);
+                if (tries != -1 && attempts < tries) {
+                    System.out.println(ColorStyle.Style.bold + ColorStyle.Color.blue + "You have " + (tries - attempts) + " 😢 tries left. Please try again!" + ColorStyle.Color.reset + ColorStyle.Style.reset);
                 }
             }
 
-            if (tries == 0) {
+            if (!won) {
                 System.out.println("\n🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁");
                 System.out.println(ColorStyle.Style.bold + ColorStyle.Color.yellow + " You lose 😭 The number was 📢 " + number + "." + ColorStyle.Color.reset + ColorStyle.Style.reset);
                 System.out.println("🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁");
-                History.saveHistory("You lost. The number was " + number + ".", false, number, 3);
-
+                History.saveHistory("You lost. The number was " + number + ".", false, number, tries == -1 ? attempts : tries);
             }
             System.out.println("\n🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆");
             System.out.println("Press Enter key to restart or any other key to exit:");
