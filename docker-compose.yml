@@ -13,7 +13,7 @@ services:
 
   temperature_converter_project_9:
     build:
-      context: .temperature_converter
+      context: ./temperature_converter
       dockerfile: Dockerfile
     container_name: temperature_converter_container
     ports:
