@@ -1,5 +1,5 @@
 ARG JAVA_VERSION=21
-FROM eclipse-temurin:${JAVA_VERSION}-jdk-alpine as builder
+FROM eclipse-temurin:${JAVA_VERSION}-jdk-alpine AS builder
 
 WORKDIR /app
 
