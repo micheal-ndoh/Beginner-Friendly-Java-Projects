@@ -1,3 +1,4 @@
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -48,7 +49,6 @@ class BookManagerTest {
 
         String searchInput = "1\n";
         Scanner searchScanner = new Scanner(new ByteArrayInputStream(searchInput.getBytes()));
-        // This will print output, but you can check for no exceptions
         assertDoesNotThrow(() -> bookManager.searchBook(searchScanner));
     }
 
