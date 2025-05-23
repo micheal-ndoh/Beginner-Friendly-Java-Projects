@@ -13,7 +13,7 @@ services:
 
   temperature_converter_project_9:
     build:
-      context: ./Temperature_converter_project_9
+      context: .temperature_converter
       dockerfile: Dockerfile
     container_name: temperature_converter_container
     ports:
@@ -23,7 +23,7 @@ services:
 
   library_management_system:
     build:
-      context: ./Library-Management-System
+      context: ./library_manager
       dockerfile: Dockerfile
     container_name: library_management_system_container
     ports:
@@ -63,7 +63,7 @@ services:
 
   simple_chatbot_project_10:
     build:
-      context: ./Simple-Chatbot-project-10
+      context: ./chatbot
       dockerfile: Dockerfile
     container_name: simple_chatbot_project_10_container
     ports:
