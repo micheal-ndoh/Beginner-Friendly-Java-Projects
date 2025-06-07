@@ -95,4 +95,5 @@ public class BookManager {
             System.out.println(" Book returned: " + book.getTitle());
         }
     }
+    /* this comment /* // /** is not valid */
 }
